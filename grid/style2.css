@@ -1,0 +1,52 @@
+body {
+  font-size: 2rem;
+  width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template:
+    "... ..... ..... ..... ..... ..... ..." 30px
+    "... header header header header header..." 150px
+    "... ..... ..... ..... ...... ..... ... " 10px
+    "... left ..... center ..... right ..." 1fr
+    "... ..... ..... ..... ...... ..... ..." 20px
+    "... footer footer footer footer footer ..." 300px
+    "... ..... ..... ..... ..... ..... ..."
+    / auto 150px 10px 1fr 20px 200px auto;
+  background-color: darkgray;
+}
+
+header {
+  grid-area: header;
+  background-color: azure;
+}
+
+main {
+  grid-area: center;
+  background-color: wheat;
+}
+
+nav {
+  grid-area: left;
+  background-color: tomato;
+}
+aside {
+  grid-area: right;
+  background-color: violet;
+}
+
+footer {
+  grid-area: footer;
+  background-color: teal;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    grid-template:
+      "header" 150px
+      "center" 1fr
+      "left  "
+      "right "
+      "footer" 300px;
+  }
+}
